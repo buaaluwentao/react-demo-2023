@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Open index.html",
             // "file": "/Users/wentaolu/Desktop/h5/react/01_hello/index.html"
-            "url": "http://localhost:8080/01_hello/index.html",
+            "url": "http://localhost:8080/01_hello/component-props.html",
             "webRoot": "${workspaceFolder}"
         }
     ]

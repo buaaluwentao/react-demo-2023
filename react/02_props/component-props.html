@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/javascript" src="../js/prop-typs-15.6.js"></script>
+</head>
+<body>
+    <div id="test">
+
+    </div>
+</body>
+<script type="text/babel">
+    class PropsComponent extends React.Component {
+        // 无构造函数的初始化
+        state = {isHot: true}
+        toogleWether =  () => {
+            this.setState({isHot: !this.state.isHot})
+        }
+
+        // 属性类型(必填)
+        static propTypes = {
+            name: PropTypes.string.isRequired
+        }
+
+        // 默认值
+        static defaultProps = {
+            name: "wentao"
+        }
+
+        render() {
+            const {isHot} = this.state
+            const {name} = this.props
+            return (
+                <div>
+                    <h1>{name}, 今天天气真{isHot ? "热" : "凉爽"}</h1>
+                    <button onClick={this.toogleWether}>点我切换天气</button>
+                </div>
+            )
+        }
+
+        // 注意JSX中JS代码的写法
+        // render() {
+        //     const {girls} = this.props
+        //     console.log(girls)
+        //     return (
+                
+        //         <div>
+        //             <ul>
+        //                 {girls.map((girl) => {return <li>{girl.name}</li>})}
+        //             </ul>
+        //         </div>
+        //     )
+        // }
+    }
+
+    // const girls = [{
+    //     name: 'zhangyuqi',
+    //     old: 18,
+    //     city: 'henan'
+    // }, {
+    //     name: 'jinchen',
+    //     old: 19,
+    //     city: 'zhejiang'
+    // }]
+
+    // const girlList = {girls}
+    ReactDOM.render(<PropsComponent name={100}/>, document.getElementById("test"));
+
+</script>
+</html>

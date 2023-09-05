@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/javascript" src="../js/prop-typs-15.6.js"></script>
+</head>
+<body>
+    <div id="test">
+
+    </div>
+</body>
+<script type="text/babel">
+    // 验证获取元素的3种方式
+    class RefsComponent extends React.Component {
+        // // 方式1: 通过字符串
+        // showText = () => {
+        //     const {input1}  = this.refs
+        //     alert(input1.value)
+        // }
+
+        // render() {
+        //     return (
+        //         <div>
+        //             <input ref="input1" placeHolder="请输入"/>
+        //             <button onClick={this.showText}>点我显示输入</button>
+        //         </div>
+        //     )
+        // }
+
+        // 方式2: 使用内联函数
+        // showText = () => {
+        //     alert(this.input1.value)
+        // }
+
+        // render() {
+        //     return (
+        //         <div>
+        //             <input ref={(c) => this.input1 = c} placeHolder="请输入"/>
+        //             <button onClick={this.showText}>点我显示输入</button>
+        //         </div>
+        //     )
+        // }
+
+        // 方式3：使用组件函数绑定
+        // showText = () => {
+        //     alert(this.input1.value)
+        // }
+        // updataInput1 = (e) => {
+        //     this.input1 = e
+        // }
+
+        // render() {
+        //     return (
+        //         <div>
+        //             <input ref={this.updataInput1} placeholder="请输入"/>
+        //             <button onClick={this.showText}>点我显示输入</button>
+        //         </div>
+        //     )
+        // }
+
+        // 方式4: 使用react ref
+        input1Ref = React.createRef()
+        showText = () => {
+            alert(this.input1Ref.current.value)
+        }
+
+        render() {
+            return (
+                <div>
+                    <input ref={this.input1Ref} placeholder="请输入"/>
+                    <button onClick={this.showText}>点我显示输入</button>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<RefsComponent />, document.getElementById("test"));
+</script>
+</html>

@@ -1,0 +1,18 @@
+.container {
+	margin-left: 5px;
+}
+
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.fix {
+	float: right;
+}
+
+.clearfix span {
+	margin-left: 10px;
+}
+

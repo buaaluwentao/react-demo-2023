@@ -1,0 +1,14 @@
+.nav {
+    display: block;
+    height: 50px;
+    text-decoration: none;
+    line-height: 50px;
+}
+
+.nav-default {
+    background-color: #ccc;
+}
+
+.nav-active {
+    background-color: skyblue;
+}

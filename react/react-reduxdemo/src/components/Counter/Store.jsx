@@ -1,0 +1,4 @@
+import {configureStore} from '@reduxjs/toolkit'
+import counterReducer from './Reducer'
+
+export default configureStore({'reducer': counterReducer})

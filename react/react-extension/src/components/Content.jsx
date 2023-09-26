@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-export default function Content() {
+export default function Empty() {
     return (
         /*<Fragment key="1">
             <h1>---------</h1>

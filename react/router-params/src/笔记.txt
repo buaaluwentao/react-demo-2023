@@ -1,0 +1,6 @@
+1. userNavigate(), <Navigate/>，useNavigationType
+2. useRoutes(), useOutlet(), <Outlet/>, Route，useOutlet()
+3. (Browser或Hash)Router, useRouterContext
+4. <NavLink/>
+5. useParams/useSearchParams/useLocation/useMatch
+6. useResolvePath() 
